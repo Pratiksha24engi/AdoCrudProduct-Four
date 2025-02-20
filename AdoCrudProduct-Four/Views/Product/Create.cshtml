@@ -1,0 +1,44 @@
+﻿@model AdoCrudProduct_Four.Models.product
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+<div class="container">
+    <div class="row">
+        @using (Html.BeginForm())
+            {
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Product Form</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label>Product Name</label>
+                            @Html.TextBoxFor(e => e.productName, new { @class = "form-control" })
+                        </div>
+                        <div class="mb-3">
+                            <label>Rate</label>
+                            @Html.TextBoxFor(e=>e.rate, new {@class="form-control"})
+                        </div>
+                       <div class="mb-3">
+                           <label>Tax</label>
+                           @Html.TextBoxFor(e=>e.tax, new {@class="form-control"})
+                       </div>
+                        <div class="mb-3">
+                            <label>Stock Quantity</label>
+                            @Html.TextBoxFor(e=>e.stockQuantity, new {@class="form-control"})
+                        </div>
+                        
+                    </div>
+                    <div class="card-footer">
+                        <div class="mb-3">
+                            <input type="submit"value="submit"class="btn btn-primary" />
+                            @*<input type="submit"value="update"class="btn btn-success" />*@
+                        </div>
+                    </div>
+                </div>
+            }
+    </div>
+</div>
+

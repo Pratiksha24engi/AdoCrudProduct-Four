@@ -1,0 +1,36 @@
+﻿@model IEnumerable<AdoCrudProduct_Four.Models.product>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>Product Id</th>
+            <th>Product name</th>
+            <th>Rate</th>
+            <th>Tax</th>
+            <th>Stock Quantity</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.productId</td>
+                    <td>@item.productName</td>
+                    <td>@item.rate</td>
+                    <td>@item.tax</td>
+                    <td>@item.stockQuantity</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit" , new {@id=item.productId})
+                        @Html.ActionLink("Delete", "Delete", new {@id=item.productId})
+                    </td>
+                </tr>
+            }
+    </tbody>
+</table>
+
